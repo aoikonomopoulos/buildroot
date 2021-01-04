@@ -1,0 +1,13 @@
+diff --git a/util.c b/util.c
+index 381c5d9..0d08a8d 100644
+--- a/util.c
++++ b/util.c
+@@ -387,7 +387,7 @@ err_out:
+ 	free(fiemap);
+ 
+ 	/* If failure is due to no filesystem support, return a single extent */
+-	if (ret == -EOPNOTSUPP)
++	if (ret == -EOPNOTSUPP || ret == -EINVAL)
+ 		return whole_file_exent(size, extents, extent_count);
+ 
+ 	image_error(image, "fiemap %s: %d %s\n", filename, errno, strerror(errno));
