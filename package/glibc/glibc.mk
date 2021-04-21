@@ -58,6 +58,8 @@ ifeq ($(BR2_TOOLCHAIN_GCC_AT_LEAST_4_7),y)
 GLIBC_EXTRA_CFLAGS += -fno-lto
 endif
 
+GLIBC_EXTRA_CFLAGS += $(BR2_GLIBC_EXTRA_CFLAGS)
+
 # The stubs.h header is not installed by install-headers, but is
 # needed for the gcc build. An empty stubs.h will work, as explained
 # in http://gcc.gnu.org/ml/gcc/2002-01/msg00900.html. The same trick
