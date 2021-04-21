@@ -1,0 +1,12 @@
+--- a/elf/dl-sysdep.c	2021-04-08 14:09:55.136236993 +0000
++++ glibc-2.31-54-g6fdf971c9dbf7dac9bea552113fe4694015bbc4d/elf/dl-sysdep.c	2021-04-08 14:10:45.566786381 +0000
+@@ -175,7 +175,9 @@
+ #endif
+ #ifdef NEED_DL_SYSINFO_DSO
+       case AT_SYSINFO_EHDR:
++#ifndef GLIBC_IGNORE_VDSO
+ 	GLRO(dl_sysinfo_dso) = (void *) av->a_un.a_val;
++#endif
+ 	break;
+ #endif
+       case AT_RANDOM:
