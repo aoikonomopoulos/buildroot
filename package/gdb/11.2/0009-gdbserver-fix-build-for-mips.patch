@@ -1,0 +1,10 @@
+--- a/gdb/nat/mips-linux-watch.h	2021-01-04 13:26:31.709130212 +0000
++++ b/gdb/nat/mips-linux-watch.h	2021-01-04 12:54:41.555784188 +0000
+@@ -18,6 +18,7 @@
+ #ifndef NAT_MIPS_LINUX_WATCH_H
+ #define NAT_MIPS_LINUX_WATCH_H
+ 
++#include <linux/types.h>
+ #include <asm/ptrace.h>
+ #include "common/break-common.h"
+ 
